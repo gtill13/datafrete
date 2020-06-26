@@ -1,0 +1,24 @@
+CREATE TABLE `cep` (
+ `cep` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+ `latitude` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `longitude` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `altitude` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `bairro` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `logradouro` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `cidade` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `estado` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `ddd` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ `ibge` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+ PRIMARY KEY (`cep`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+
+CREATE TABLE `cadastro` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `cepOrigem` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+ `cepDestino` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+ `distCalculada` float DEFAULT NULL,
+ `dtCriacao` timestamp NULL DEFAULT current_timestamp(),
+ `dtAlteracao` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+
